@@ -27,5 +27,23 @@ p{
 
     now, when u are in say "feature1" branch, and then the changes made by u in code will only be reflected on the feature1 branch, when you change the branch, the text will also change according to the branch
 
-    
+    The text above is only available in feature1 branch!
+
+    Now if you want to delete a branch command is : "git -d feature2"
+    This will delete a branch
+
+    Now, if you want to see difference b/w two branches:
+        Say now you are in "feature1" branch, you can type "git diff main" here, it will show difference b/w "feature1" and "main" branch
+
+        Merging two branches:
+        You can merge two branches by      "  git merge main  "
+
+        Other way is using "github" you can create a "pull request (PR) ", this technique is used when multiple developers are working on the same project, and you want your feature to merge with the main branch, so you will create a "PR" and a senior developer will view those changes, and it will be merged with the main branch if the changes made by you are good enough...
+
+
+        Now when your pull request is accepted, or here, you are the only one working so u can accept your pull request on your own, in that case the changes made by you will be reflected on github! BUT! that is your remote repository and if you want those changes to be copied on your local repo, i.e. your vs code, you need to do "  git pull origin main  " by this, data from your remote repository will be copied to your local repo(ie your computer/vscode)
+
+
+        what is fork?
+        Forking is the process where we copy an entire repository and then we can have another name for that copy, we can copy someone else's repository and make changes in the copy we have created,
 }
