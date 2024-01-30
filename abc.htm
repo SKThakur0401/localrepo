@@ -2,21 +2,23 @@ p{
     Here, we have created a random folder called "localRepo", now when we enter here, and do "  ls -a  " it will show only  " . "  &  "  ..  " and no " .git ", so we need to do "git init" thereafter it will be linked to github and show " .git "  as well
 
 
-    Now after it is linked to git, we can perform "add" operation to stage the changes and subsequently do commit, however, since it is not yet linked to a "remote repository" on github, commits made will be local, so the various commits or this code will be available locally only, to link it to "remote repo" on github, we do     "  git remote add origin LINK_OF_REMOTE_REPO  "
+    Now after it is linked to git, we can perform "add" operation to stage the changes and subsequently do commit, however, since it is not yet linked to a "remote repository" on github and it is just a normal folder created on VS-Code, commits made will be local, so the various commits or this code will be available locally only, to link it to "remote repo" on github, we do     "  git remote add origin LINK_OF_REMOTE_REPO  "
     (You can create a new repo and use its link to copy paste this code on that rep :)
 
     here we are linking to "    https://github.com/SKThakur0401/localrepo.git   "
 
+    (The folder mentioned above is available on my github :)
     now after linking, u can do " git branch " and it will tell you the name of all the branches, initially there'll be only "master" branch by default but u want to work on main branch, so u'll change the name of branch by typing this   "  git branch -M main  " now name of your branch is changed to "main"
 
     So if you do " git branch " now, it will show "main",
 
-    now u can do "  git push origin main  " and it will be pushed to the remote repository on the internet
+    now u can do "  git push origin main  " and it will be pushed to the remote repository on the internet (ON THE MAIN BRANCH ONLY)
 
-
-    Now, till now we have only worked on "main" branch, in real life, multiple branches of a project can be created, 
+    CONCEPT OF BRANCHES IN GITHUB:  
+    Now, till now we have only worked on "main" branch, in real life, multiple branches of a project can be created, this is done because multiple people are working on a code base, and simultaneously multiple people are adding new features to the same code, lets say you are working on a feature called as "feature1", someone else might be working on "feature2", so you don't want to disturb each other's work, so you create your separate branch instead of making changes in the main branch, "so you can create your own branch with the name feature1" and he can do the same for his feature, later, you both can merge your branches with the main branch,
 
     command to create a new branch :  "  git checkout -b feature1  "
+    (THIS COMMAND WILL CREATE A NEW BRANCH AND ALSO "check it out", which means now you have entered this newly created branch and if you do "git branch" it will show your current branch as "feature1", which means you are in feature1 branch and any change you do now, will reflect in feature1 branch and not the main branch!!!)
 
 
     command to access another branch :  "  git checkout feature1  "
@@ -31,14 +33,15 @@ p{
 
     Now if you want to delete a branch command is : "git -d feature2"
     This will delete a branch
+    (NOTE: you can use this command only when u are in some other branch lol XD, so if you are in feature2 branch only, then u cannot delete it so do "git checkout main_or_some_otherBranch_except_feature2")
 
     Now, if you want to see difference b/w two branches:
         Say now you are in "feature1" branch, you can type "git diff main" here, it will show difference b/w "feature1" and "main" branch
 
         Merging two branches:
-        You can merge two branches by      "  git merge main  "
+        You can merge two branches by      "  git merge main  " this will merge your current branch (which is "feature1" here) with "main"
 
-        Other way is using "github" you can create a "pull request (PR) ", this technique is used when multiple developers are working on the same project, and you want your feature to merge with the main branch, so you will create a "PR" and a senior developer will view those changes, and it will be merged with the main branch if the changes made by you are good enough...
+        Other way is using "github" you can create a "pull request (PR) ", this technique is used when multiple developers are working on the same project, and you want your feature to merge with the main branch, so you will create a "PR" and a senior developer will view those changes, and it will be merged with the main branch if the changes made by you are worth adding
 
 
         Now when your pull request is accepted, or here, you are the only one working so u can accept your pull request on your own, in that case the changes made by you will be reflected on github! BUT! that is your remote repository and if you want those changes to be copied on your local repo, i.e. your vs code, you need to do "  git pull origin main  " by this, data from your remote repository will be copied to your local repo(ie your computer/vscode)
